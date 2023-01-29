@@ -15,6 +15,10 @@ NOT_ROUTED_TO_GATEWAY_CIDRS=""
 VXLAN_ID="42"
 # VXLAN need an /24 IP range not conflicting with K8S and local IP ranges
 VXLAN_IP_NETWORK="172.16.0"
+# Vxlan udp port to use. 
+# Override this if your CNI disallows encapsulation using the default port. 
+# e.g. if you are using cilium in vxlan tunnelling mode
+VXLAN_PORT=8472
 # Keep a range of IPs for static assignment in nat.conf
 VXLAN_GATEWAY_FIRST_DYNAMIC_IP=20
 
